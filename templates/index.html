@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Profil Bilgileri</title>
+</head>
+<body>
+    {% if profile_data %}
+        <h1>Instagram Profil Bilgileri</h1>
+        <p><strong>Kullanıcı Adı:</strong> {{ profile_data.username }}</p>
+        <p><strong>Adı Soyadı:</strong> {{ profile_data.fullname }}</p>
+        <p><strong>Kullanıcı ID:</strong> {{ profile_data.userid }}</p>
+        <p><strong>Biyografi:</strong> {{ profile_data.biography }}</p>
+        <p><strong>Harici URL:</strong> {{ profile_data.external_url }}</p>
+        <img src="{{ profile_data.profile_pic_url }}" alt="Profil Resmi">
+        <p><strong>Gizli Profil:</strong> {{ profile_data.is_private }}</p>
+        <p><strong>Onaylı Profil:</strong> {{ profile_data.is_verified }}</p>
+        <p><strong>Takipçi Sayısı:</strong> {{ profile_data.followers }}</p>
+        <p><strong>Takip Edilen Sayısı:</strong> {{ profile_data.followees }}</p>
+        <p><strong>Medya Sayısı:</strong> {{ profile_data.mediacount }}</p>
+        <p><strong>IGTV Sayısı:</strong> {{ profile_data.igtvcount }}</p>
+        <p><strong>Hikaye Sayısı:</strong> {{ profile_data.highlight_reel_count }}</p>
+        <p><strong>Engellenen Görüntüleyici:</strong> {{ profile_data.blocked_by_viewer }}</p>
+        <p><strong>Kısıtlanan Görüntüleyici:</strong> {{ profile_data.restricted_by_viewer }}</p>
+        <p><strong>Görüntüleyici Tarafından Takip Ediliyor:</strong> {{ profile_data.followed_by_viewer }}</p>
+        <p><strong>Görüntüleyiciyi Takip Ediyor:</strong> {{ profile_data.follows_viewer }}</p>
+        <p><strong>Görüntüleyici Tarafından İstendi:</strong> {{ profile_data.requested_by_viewer }}</p>
+        <p><strong>Ülke Engeli:</strong> {{ profile_data.country_block }}</p>
+        <p><strong>Görüntüleyici Tarafından Engellenen:</strong> {{ profile_data.has_blocked_viewer }}</p>
+        <p><strong>Kısa Videolar Var:</strong> {{ profile_data.has_clips }}</p>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
